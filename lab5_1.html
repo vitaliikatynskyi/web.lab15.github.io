@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab 5-1</title>
+</head>
+<body>
+    <script>
+        function processString(inputString) {
+            let result = "";
+            let countPlusMinus = 0;
+            
+            for (let char of inputString) {   
+                if (char === ';') {
+                    result += '.';
+                } else {
+                    result += char;
+                }
+                
+                if (char === '+' || char === '-') {
+                    countPlusMinus++;
+                }
+            }
+            
+            return { modifiedString: result, countPlusMinus: countPlusMinus };
+        }
+
+        const inputString = "abc:++;;:3;+;B-;";
+
+        const result = processString(inputString);
+
+        document.write("Вхідний рядок: " + inputString + "<br>");
+        document.write("Результуючий рядок: " + result.modifiedString + "<br>");
+        document.write("Кількість символів '+' та '-': " + result.countPlusMinus + "<br>");
+    </script>
+</body>
+</html>

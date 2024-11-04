@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab5_3</title>
+</head>
+<body>
+
+<script>
+    function encryptText(inputText) {
+        inputText = inputText.toLowerCase();
+
+        let encryptedtext = "";
+        for (let i = 0; i < inputText.length; i++) {
+            let currentLetter = inputText[i];
+            if (currentLetter >= 'а' && currentLetter <= 'я') {
+                encryptedtext += String.fromCharCode(((currentLetter.charCodeAt(0) - 'а'.charCodeAt(0) + 1) % 32) + 'а'.charCodeAt(0));
+            } else {
+                encryptedtext += currentLetter;
+            }
+        }
+        return encryptedtext;
+    }
+
+    let inputText = prompt("Введіть текст для шифрування:");
+
+    let encryptedtext = encryptText(inputText);
+
+    document.write("<p><strong>Проста програма шифрування:</strong></p>");
+    document.write("<p>Вхідний текст: " + inputText + "</p>");
+    document.write("<p>Зашифрований текст: " + encryptedtext + "</p>");
+</script>
+
+</body>
+</html>

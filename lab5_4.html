@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab 5-4</title>
+</head>
+<body>
+    <script>
+        function shuffleWord(word) {
+            if (word.length <= 2) {
+                return word; 
+            }
+
+            var letters = word.split("");
+            var firstLetter = letters[0];
+            var lastLetter = letters[letters.length - 1];
+
+            letters = letters.slice(1, -1);
+
+            for (var i = letters.length - 2; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                [letters[i], letters[j]] = [letters[j], letters[i]];
+            }
+
+            return firstLetter + letters.join("") + lastLetter;
+        }
+
+        function encryptText(text) {
+            var words = text.split(" "); 
+            var encryptedWords = [];
+
+            for (var i = 0; i < words.length; i++) {
+                encryptedWords.push(shuffleWord(words[i]));
+            }
+
+            return encryptedWords.join(" "); 
+        }
+
+        var inputText = "Hello, World! This is a simple encryption.";
+
+        var encryptedText = encryptText(inputText);
+
+        document.write("Вхідний текст: " + inputText + "<br>");
+        document.write("Зашифрований текст: " + encryptedText + "<br>");
+    </script>
+</body>
+</html>

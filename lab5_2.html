@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 5.2</title>
+    <script>
+        function countWordsWithLetterP(inputString) {
+            var words = inputString.split(/\s+/);
+            var count = 0;
+
+            for (var i = 0; i < words.length; i++) {
+                if (words[i].includes('п')) {
+                    count++;
+                }
+            }
+
+            return count;
+        }
+
+        function addCommasAfterWords(inputString) {
+            var words = inputString.split(/\s+/);
+            return words.join(', ');
+        }
+
+        function performOperations() {
+            var inputElement = document.getElementById('inputText');
+            var inputValue = inputElement.value;
+
+            var count = countWordsWithLetterP(inputValue);
+            var textWithCommas = addCommasAfterWords(inputValue);
+            document.getElementById('result').innerHTML = 'Words with letter "п": ' + count + '<br>Text with commas: ' + textWithCommas;
+        }
+    </script>
+</head>
+<body>
+    <label for="inputText">Enter Text:</label>
+    <input type="text" id="inputText" value="понеділок початок тижня а пятниця кінець">
+
+    <button onclick="performOperations()">Perform Operations</button>
+
+    <div id="result"></div>
+</body>
+</html>
