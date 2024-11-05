@@ -6,12 +6,13 @@
     <title>Lab 5.2</title>
     <script>
         function countWordsWithLetterP(inputString) {
-            var words = inputString.split(/\s+/);
+            var words = inputString.split(/\s+/);//тап пробіл
             var count = 0;
 
-            for (var i = 0; i < words.length; i++) {
-                if (words[i].includes('п')) {
-                    count++;
+            for (var i = 0; i < words.length; i++) { //перебираємо слова
+               
+                if (words[i].includes('п')) { //якщо слово містить букву п
+                    count++; //ліч
                 }
             }
 

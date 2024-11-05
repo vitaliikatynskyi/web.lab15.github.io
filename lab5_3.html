@@ -8,11 +8,11 @@
 <body>
 
 <script>
-    function encryptText(inputText) {
-        inputText = inputText.toLowerCase();
+    function encryptText(inputText) {//функція шифрування тексту
+        inputText = inputText.toLowerCase();//
 
-        let encryptedtext = "";
-        for (let i = 0; i < inputText.length; i++) {
+        let encryptedtext = "";//зашифрований текст
+        for (let i = 0; i < inputText.length; i++) {//перебираємо текст
             let currentLetter = inputText[i];
             if (currentLetter >= 'а' && currentLetter <= 'я') {
                 encryptedtext += String.fromCharCode(((currentLetter.charCodeAt(0) - 'а'.charCodeAt(0) + 1) % 32) + 'а'.charCodeAt(0));
