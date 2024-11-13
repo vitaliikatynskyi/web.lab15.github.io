@@ -11,7 +11,7 @@
             
             for (let char of inputString) {   
                 if (char === ';') {
-                    result += '.';
+                    result += ',.';
                 } else {
                     result += char;
                 }
@@ -31,6 +31,12 @@
         document.write("Вхідний рядок: " + inputString + "<br>");
         document.write("Результуючий рядок: " + result.modifiedString + "<br>");
         document.write("Кількість символів '+' та '-': " + result.countPlusMinus + "<br>");
+        var button = document.createElement('button');
+        button.innerHTML = 'Назад';
+        button.onclick = function() {
+            window.location.href = 'index.html';
+        };
+        document.body.appendChild(button);
     </script>
 </body>
 </html>

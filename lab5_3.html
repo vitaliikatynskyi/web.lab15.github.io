@@ -30,6 +30,12 @@
     document.write("<p><strong>Проста програма шифрування:</strong></p>");
     document.write("<p>Вхідний текст: " + inputText + "</p>");
     document.write("<p>Зашифрований текст: " + encryptedtext + "</p>");
+    var button = document.createElement('button');
+        button.innerHTML = 'Назад';
+        button.onclick = function() {
+            window.location.href = 'index.html';
+        };
+        document.body.appendChild(button);
 </script>
 
 </body>
