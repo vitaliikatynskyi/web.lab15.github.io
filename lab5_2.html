@@ -6,13 +6,12 @@
     <title>Lab 5.2</title>
     <script>
         function countWordsWithLetterP(inputString) {
-            var words = inputString.split(/\s+/);//тап пробіл
+            var words = inputString.split(/\s+/);
             var count = 0;
 
-            for (var i = 0; i < words.length; i++) { //перебираємо слова
-               
-                if (words[i].includes('п')) { //якщо слово містить букву п
-                    count++; //ліч
+            for (var i = 0; i < words.length; i++) {
+                if (words[i].includes('п')) {
+                    count++;
                 }
             }
 
@@ -32,6 +31,10 @@
             var textWithCommas = addCommasAfterWords(inputValue);
             document.getElementById('result').innerHTML = 'Words with letter "п": ' + count + '<br>Text with commas: ' + textWithCommas;
         }
+
+        function goBack() {
+            window.history.back();
+        }
     </script>
 </head>
 <body>
@@ -39,13 +42,8 @@
     <input type="text" id="inputText" value="понеділок початок тижня а пятниця кінець">
 
     <button onclick="performOperations()">Perform Operations</button>
+    <button onclick="window.location.href='index.html'">Назад</button>
 
     <div id="result"></div>
-    var button = document.createElement('button');
-    button.innerHTML = 'Назад';
-    button.onclick = function() {
-        window.location.href = 'index.html';
-    };
-    document.body.appendChild(button);
 </body>
 </html>
